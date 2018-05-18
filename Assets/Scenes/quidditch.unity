@@ -1941,6 +1941,26 @@ Prefab:
       propertyPath: wanderWeight
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114052191652392892, guid: 77112fc20e722324eaafdf9e514bac28,
+        type: 2}
+      propertyPath: playerPosition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114052191652392892, guid: 77112fc20e722324eaafdf9e514bac28,
+        type: 2}
+      propertyPath: distanceToShoot
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114895069887567672, guid: 77112fc20e722324eaafdf9e514bac28,
+        type: 2}
+      propertyPath: playerPosition
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114144563229523432, guid: 77112fc20e722324eaafdf9e514bac28,
+        type: 2}
+      propertyPath: playerPosition
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 77112fc20e722324eaafdf9e514bac28, type: 2}
   m_IsPrefabParent: 0

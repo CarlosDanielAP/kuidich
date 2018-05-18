@@ -95,9 +95,14 @@ namespace ChaserDanisStates
                     player.transform.position,
                     player.steering.Target.position) < 6f)
                 {
-                    // Si no esta controlada, yo puedo tomar posesión de ella
-                    if (GameManager.instancia.ControlQuaffle(player.gameObject))
+                    if (!GameManager.instancia.isQuaffleControlled())
                     {
+                        // Si no esta controlada, yo puedo tomar posesión de ella
+                        GameManager.instancia.ControlQuaffle(player.gameObject);
+
+                        GameManager.instancia.
+                            Quaffle.GetComponent<Quaffle>().
+                                Control(player.transform);
                         // Busco anotar porque tengo la pelota
                         ChangeState(ChaserStateID.SearchGoal);
                     }
@@ -111,12 +116,12 @@ namespace ChaserDanisStates
                 if ((player.myTeam as TeamDanis).isTeammate(
                     GameManager.instancia.Quaffle.GetComponent<Quaffle>().CurrentBallOwner()))
                 {
-                    // ChangeState(ChaserStateID.TakePosition);
+                     ChangeState(ChaserStateID.TakePosition);
                 }
                 // Si el que la controla es del equipo contrario
                 else
                 {
-                    ChangeState(ChaserStateID.ChaseBall);
+                    ChangeState(ChaserStateID.ChaseRival);
                 }
 
             }
@@ -172,7 +177,9 @@ namespace ChaserDanisStates
             //si la pelota la tiene el otro equipo voy por ella
             if (!(player.myTeam as TeamDanis).isTeammate(GameManager.instancia.Quaffle.GetComponent<Quaffle>().CurrentBallOwner()))
             {
-                ChangeState(ChaserStateID.ChaseBall);
+                Debug.Log("latienen los otros");
+                ChangeState(ChaserStateID.ChaseRival);
+
             }
             }
         public override void OnExit(GameObject objeto)
@@ -237,7 +244,7 @@ namespace ChaserDanisStates
         {
             yield return new WaitForSeconds(3f);
             Debug.Log("pase bola"+this.player.transform);
-            
+            ((ChaserDanis)player).ThrowStrength =50;
             // el nuevo target es el jugador   si soy yo  sigue siendo la porteria
             if (player.myTeam.GetComponent<TeamDanis>().FindClosestChaserToGoal() != this.player.transform)
             {
@@ -286,7 +293,7 @@ namespace ChaserDanisStates
         {
            
             // si la pelota esta libre mas de sierto tiempo voy a buscarla y si  soy el mas cercano
-            if (GameManager.instancia.ControlQuaffle(player.gameObject))
+            if (!GameManager.instancia.isQuaffleControlled())
             {
                 fsm.myMono.StartCoroutine(waitFunction());
             }
@@ -309,7 +316,7 @@ namespace ChaserDanisStates
             // si la pelota la tiene un rival voy a atacar
             else
             {
-                ChangeState(ChaserStateID.ChaseBall);
+                ChangeState(ChaserStateID.ChaseRival);
             }
 
         }

@@ -21,7 +21,7 @@ public class ChaserDanis : Player
         ChaseBall chase = new ChaseBall(this);
          SearchGoal search = new SearchGoal(this);
         // EscortTeammate escort = new EscortTeammate(this);
-        // ChaseRival rival = new ChaseRival(this);
+        ChaseRival rival = new ChaseRival(this);
         Distancia distancia = new Distancia(this);
         TakePosition take = new TakePosition(this);
 
@@ -31,7 +31,7 @@ public class ChaserDanis : Player
         fsm.AddState(ChaserStateID.TakePosition, take);
          fsm.AddState(ChaserStateID.SearchGoal, search);
        // fsm.AddState(ChaserStateID.EscortTeammate, escort);
-        //fsm.AddState(ChaserStateID.ChaseRival, rival);
+        fsm.AddState(ChaserStateID.ChaseRival, rival);
         fsm.AddState(GlobalStateID.Distancia, distancia);
 
         fsm.ChangeState(ChaserStateID.PrepareToPlay);

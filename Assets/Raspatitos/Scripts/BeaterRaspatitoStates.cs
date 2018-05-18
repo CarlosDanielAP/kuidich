@@ -83,7 +83,8 @@ namespace BeaterRaspatitoStates
 
     public class Hit : State
     {
-        //en este estado seguira a la bludger y la golpeara :v
+        //en este estado seguira a la bludger y la 
+        //peara :v
         //que usamos? seek o pursuit?pursuit
         // quesea su etsado original no, perseguir la bludger?
         //no respondiste mi pregunta

@@ -27,6 +27,9 @@ public class TeamDanis : Team
     public List<Transform> rivalGoals;
     public Transform rivalGoals_position;
 
+    public List<Transform> myGoals;
+    public Transform myGoals_position;
+
     public List<Transform> myStartingPositions; // Saber donde inician mis jugadores
     public Transform mySeekerStartingPosition;
 
@@ -66,13 +69,16 @@ public class TeamDanis : Team
             GameManager.instancia.team1Players = Danis;
             // Puedo saber hacia donde tiro
             rivalGoals = GameManager.instancia.team2Goals;
-            
+            myGoals = GameManager.instancia.team1Goals;
+
+
         }
         else if (DanisTeamNumber == 2)
         {
             GameManager.instancia.team2Players = Danis;
 
             rivalGoals = GameManager.instancia.team1Goals;
+            myGoals = GameManager.instancia.team2Goals;
         }
 
         GameManager.instancia.SetTeamColor(DanisTeamNumber, myDanisColor);

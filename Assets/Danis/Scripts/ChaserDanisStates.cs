@@ -204,7 +204,7 @@ namespace ChaserDanisStates
         }
         public override void OnEnter(GameObject objeto)
         {
-            player.steering.nearPlayersSensorRadius = 50;
+            player.steering.nearPlayersSensorRadius = 15;
             int aro = Random.Range(0, 2);
             player.steering.Target = (player.myTeam as TeamDanis).rivalGoals[aro];
 
@@ -231,7 +231,27 @@ namespace ChaserDanisStates
             {
                 ChangeState(ChaserStateID.ChaseBall);
             }
-        }
+
+
+            // Si ya me encuentro a cierta distancia el objetivo, 
+            // puedo tirar al aro
+            if (Vector3.Distance(
+                player.transform.position,
+                player.steering.Target.position) < (player as ChaserChido).distanceToShoot) // calibrar
+            {
+
+                ((ChaserDanis)player).ThrowStrength = 50;
+                GameManager.instancia.Quaffle.GetComponent<Quaffle>().
+               Throw(
+                   player.steering.Target.position - player.transform.position,
+                   ((ChaserDanis)player).ThrowStrength);
+
+                GameManager.instancia.FreeQuaffle();
+
+                ChangeState(ChaserStateID.nada);
+
+            }
+            }
         public override void OnExit(GameObject objeto)
         {
            fsm.myMono.StopAllCoroutines();
@@ -244,7 +264,7 @@ namespace ChaserDanisStates
         {
             yield return new WaitForSeconds(3f);
             Debug.Log("pase bola"+this.player.transform);
-            ((ChaserDanis)player).ThrowStrength =50;
+            ((ChaserDanis)player).ThrowStrength =30;
             // el nuevo target es el jugador   si soy yo  sigue siendo la porteria
             if (player.myTeam.GetComponent<TeamDanis>().FindClosestChaserToGoal() != this.player.transform)
             {

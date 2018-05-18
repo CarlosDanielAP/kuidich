@@ -1885,11 +1885,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1215557506241364, guid: 77112fc20e722324eaafdf9e514bac28, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1244708931840482, guid: 77112fc20e722324eaafdf9e514bac28, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1690099516612878, guid: 77112fc20e722324eaafdf9e514bac28, type: 2}
       propertyPath: m_IsActive
@@ -1949,7 +1949,7 @@ Prefab:
     - target: {fileID: 114052191652392892, guid: 77112fc20e722324eaafdf9e514bac28,
         type: 2}
       propertyPath: distanceToShoot
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114895069887567672, guid: 77112fc20e722324eaafdf9e514bac28,
         type: 2}
@@ -1960,6 +1960,21 @@ Prefab:
         type: 2}
       propertyPath: playerPosition
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114365905722338066, guid: 77112fc20e722324eaafdf9e514bac28,
+        type: 2}
+      propertyPath: pursuitWeight
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114843141390885452, guid: 77112fc20e722324eaafdf9e514bac28,
+        type: 2}
+      propertyPath: pursuitWeight
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114895069887567672, guid: 77112fc20e722324eaafdf9e514bac28,
+        type: 2}
+      propertyPath: distanceToShoot
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 77112fc20e722324eaafdf9e514bac28, type: 2}

@@ -21,6 +21,8 @@ public class TeamDanis : Team
 	private Transform ClosestTeammateToQuaffle;
    public Transform ClosestChaserToQuaffle;
     public Transform ClosestChaserToGoal;
+    public GameObject ClosestEnemyToQuaffle;
+
 
     public List<Transform> rivalGoals;
     public Transform rivalGoals_position;
@@ -48,6 +50,9 @@ public class TeamDanis : Team
         Danis.Add(transform.Find("Golpeador Danis 2"));
         Danis.Add(transform.Find("Buscador Danis"));
 		Teammates = Danis;
+
+      
+
 
         // Le aviso al GameManager mi nombre de equipo y 
         // me regresa el número de equipo que me toca
@@ -172,6 +177,27 @@ public class TeamDanis : Team
         Debug.Log(ClosestChaserToGoal);
         return ClosestChaserToGoal;
         
+    }
+
+    public GameObject FindClosestEnemyToQuaffle()
+    {
+        Debug.Log("buscando cercano");
+        float less = float.MaxValue;
+        float dist;
+        foreach (Transform chafas in Chafas)
+        {
+            dist = Vector3.Distance(chafas.position, GameManager.instancia.Quaffle.transform.position);
+            if (dist < less)
+            {
+                less = dist;
+               ClosestEnemyToQuaffle = chafas.gameObject;
+
+            }
+
+        }
+        Debug.Log(ClosestChaserToGoal);
+        return ClosestEnemyToQuaffle;
+
     }
 
 }

@@ -258,7 +258,7 @@ namespace ChaserSangreLimpiaStates
             /*player.steering.teamSeparation = true;
             player.steering.teamCohesion = true;
             player.steering.teamAlignment = true; */
-            Debug.Log("Apoyando...");
+            //("Apoyando...");
             player.steering.Target = GameManager.instancia.Quaffle.GetComponent<Quaffle>().CurrentBallOwner().transform;
             player.steering.seek = true;
             player.steering.maxSpeed = 100;

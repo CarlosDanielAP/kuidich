@@ -380,7 +380,7 @@ public class SteeringCombined : MonoBehaviour
             //run through each sensor checking for any intersection points
             if (didHit[h] && hit[h].collider.tag.Equals("Boundary"))
             {
-                //Debug.Log("IMPACT ON WALL, sensor " + h);
+                ////("IMPACT ON WALL, sensor " + h);
                 if (DistToThisIP < DistToClosestIP)
                 {
                     // See if this is the closest wall

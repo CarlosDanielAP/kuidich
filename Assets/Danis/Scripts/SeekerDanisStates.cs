@@ -83,7 +83,7 @@ namespace SeekerDanisStates
                 // Probar agarrarla
                 if (GameManager.instancia.GrabSnitch(objeto))
                 {
-                    Debug.Log("gane");
+                    //("gane");
                 }
                 else
                 {

@@ -27,7 +27,7 @@ namespace GlobalDanisStates
           
             
             player.myTeam.GetComponent<TeamDanis>().FindClosestChaserToQuaffle();
-            Debug.Log(player.myTeam.GetComponent<TeamDanis>().ClosestChaserToQuaffle);
+            //(player.myTeam.GetComponent<TeamDanis>().ClosestChaserToQuaffle);
           
 
         }
@@ -42,7 +42,7 @@ namespace GlobalDanisStates
             //si es el mas cercano va a buscar la pelota.
             if (player.myTeam.GetComponent<TeamDanis>().ClosestChaserToQuaffle == objeto.transform)
             {
-                Debug.Log("soy yo");
+                //("soy yo");
                 ChangeState(ChaserStateID.ChaseBall);
             }
 

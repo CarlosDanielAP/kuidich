@@ -88,7 +88,7 @@ namespace SeekerSangreLimpiaStates
                 player.steering.Target.GetComponent<SteeringCombined>().maxForce = 0;
                 player.steering.Target.GetComponent<Rigidbody>().isKinematic = true;
 
-                Debug.Log("Agarra Snitch");
+                //("Agarra Snitch");
                 player.steering.Target.transform.parent = player.transform;
 
             }

@@ -30,7 +30,7 @@ namespace KeeperDanisStates
         }
         public override void OnEnter(GameObject objeto)
         {
-            Debug.Log("hola");
+            //("hola");
         }
         public override void Act(GameObject objeto)
         {
@@ -129,7 +129,7 @@ namespace KeeperDanisStates
             if (Vector3.Distance(player.transform.position,
                GameManager.instancia.Quaffle.transform.position) < 80f)
             {
-                Debug.Log("ahi viene");
+                //("ahi viene");
                 ChangeState(KeeperStateID.atajar);
             }
             foreach (Transform goal in (player.myTeam as TeamDanis).myGoals)

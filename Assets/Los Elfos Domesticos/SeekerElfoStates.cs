@@ -84,7 +84,7 @@ namespace SeekerElfoStates
                 {
                     // la atrapé
                     ChangeState(SeekerStateID.Grab);
-                    Debug.Log("La atrape, el juego termina");
+                    //("La atrape, el juego termina");
                 }
                 else
                 {

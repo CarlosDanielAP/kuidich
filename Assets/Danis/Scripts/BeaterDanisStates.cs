@@ -26,7 +26,7 @@ namespace BeaterDanisStates {
         }
         public override void OnEnter(GameObject objeto)
         {
-            Debug.Log("hola");
+            //("hola");
         }
         public override void Act(GameObject objeto)
         {
@@ -106,7 +106,7 @@ namespace BeaterDanisStates {
 
                     bludger.GetComponent<Bludger>().BeaterIntervention(player.myTeam.GetComponent<TeamDanis>().FindClosestEnemyToQuaffle());
                 }
-                Debug.Log("sakeseeeeeeeeeeeeee");
+                //("sakeseeeeeeeeeeeeee");
             }
         }
         public override void OnExit(GameObject objeto)

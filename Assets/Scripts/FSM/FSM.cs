@@ -53,7 +53,7 @@ public class FSM
         // Verificar que el estado que quiero agregar no esté ya presente
         if(states.ContainsKey(stateID) || states.ContainsValue(state))
         {
-            Debug.LogError("No se puede agregar estado, ya existe");
+            //Error("No se puede agregar estado, ya existe");
             return;
         }
 
@@ -66,12 +66,12 @@ public class FSM
         // Primero verifico que haya estado en la fsm
         if(states.Count == 0)
         {
-            Debug.LogError("No se puede activar FSM, no tiene estados");
+            //Error("No se puede activar FSM, no tiene estados");
             return;
         }
         if(currentState == null)
         {
-            Debug.LogError("No puedo activar FSM, no hay un estado inicial");
+            //Error("No puedo activar FSM, no hay un estado inicial");
             return;
         }
 
@@ -97,7 +97,7 @@ public class FSM
         }
         else
         {
-            Debug.Log("La maquina de estados no esta activa");
+            //("La maquina de estados no esta activa");
         }
     }
 
@@ -105,7 +105,7 @@ public class FSM
     {
         if(states[stateID] == null)
         {
-            Debug.LogError("No econtró el estado con ese ID");
+            //Error("No econtró el estado con ese ID");
             return null;
         }
         return states[stateID];
@@ -151,7 +151,7 @@ public class FSM
     {
         if(blipPreviousState == null)
         {
-            Debug.LogError("Intentando revertir un blip sin definir");
+            //Error("Intentando revertir un blip sin definir");
             return;
         }
 
@@ -169,7 +169,7 @@ public class FSM
     {
         if(!isActive)
         {
-            Debug.LogError("No puedo notificar evento, fms no esta activa");
+            //Error("No puedo notificar evento, fms no esta activa");
             return;
         }
 

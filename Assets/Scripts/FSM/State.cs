@@ -77,7 +77,7 @@ public abstract class State
         // Antes de agregar evento, checar que no este ya guardado
         if(events.Contains(eventID))
         {
-            Debug.Log("El estado ya tiene el evento");
+            //("El estado ya tiene el evento");
             return;
         }
         events.Add(eventID);

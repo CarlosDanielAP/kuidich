@@ -28,7 +28,7 @@ namespace FinderRaspatitoStates
         }
         public override void OnEnter(GameObject objeto)
         {
-            Debug.Log("Wander");
+            //("Wander");
             
             player.steering.wander = true;
             distBludger1=0f;
@@ -72,7 +72,7 @@ namespace FinderRaspatitoStates
         }
         public override void OnExit(GameObject _object)
         {
-            Debug.Log("Sali de Wander");
+            //("Sali de Wander");
             player.steering.wander = false;
         }
     }
@@ -94,7 +94,7 @@ namespace FinderRaspatitoStates
             player.steering.pursuit = true;
             player.steering.maxSpeed = 30f;
             player.steering.maxForce = 5f;
-            Debug.Log("Estoy persiguiendo a la snitch");
+            //("Estoy persiguiendo a la snitch");
         }
         public override void Act(GameObject objeto)
         {
@@ -139,7 +139,7 @@ namespace FinderRaspatitoStates
         }
         public override void Reason(GameObject objeto)
         {
-            Debug.Log("Estoy huyendo");
+            //("Estoy huyendo");
         }
         public override void OnExit(GameObject _object)
         {

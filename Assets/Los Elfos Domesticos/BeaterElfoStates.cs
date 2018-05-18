@@ -68,7 +68,7 @@ namespace BeaterElfoStates
         }
         public override void OnEnter(GameObject objeto)
         {
-			Debug.Log ("Voy a proteger compañero");
+			// ("Voy a proteger compañero");
 			//CurrentBludger1Target= GameObject.Find ("Bludger1").GetComponent<Bludger> ().GetTarget ();
 			player.steering.Target = GameObject.Find ("Bludger1").GetComponent<Bludger> ().transform;
 			player.steering.seek=true;

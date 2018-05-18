@@ -35,7 +35,7 @@ namespace BeaterRaspatitoStates
 
             numberBludger = ((player.myTeam as TeamRaspatitos).BludgerNumber(player.gameObject)) - 1;
 
-            Debug.Log(numberBludger);
+            //(numberBludger);
         }
         public override void Act(GameObject objeto)
         {
@@ -46,21 +46,21 @@ namespace BeaterRaspatitoStates
             
             helpTarget[numberBludger] = GameManager.instancia.Bludger[numberBludger].GetComponent<Bludger>().GetTarget();
 
-            Debug.Log(helpTarget[numberBludger]);
+            //(helpTarget[numberBludger]);
 
             a[numberBludger] = helpTarget[numberBludger].gameObject;
 
-            Debug.Log("Objeto: " + a[numberBludger]);
+            //("Objeto: " + a[numberBludger]);
 
             if(player.myTeam.isTeammate(a[numberBludger]))
             {
-                Debug.Log("Bludger" + numberBludger + "es companero");
+                //("Bludger" + numberBludger + "es companero");
                 player.steering.Target = GameManager.instancia.Bludger[numberBludger].transform;
                 ChangeState(BeaterStateID.Hit);
             }
             else
             {
-                Debug.Log("Bludger" + numberBludger + "es rival");
+                //("Bludger" + numberBludger + "es rival");
             }
 
 
@@ -104,7 +104,7 @@ namespace BeaterRaspatitoStates
         }
         public override void OnEnter(GameObject objeto)
         {
-            //Debug.Log("Hit");
+            ////("Hit");
             player.steering.seek = true;
             player.steering.maxForce = 3;
             player.steering.maxSpeed = 25;

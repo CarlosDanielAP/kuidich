@@ -74,7 +74,7 @@ namespace BeaterSangreLimpiaStates
                     if (Vector3.Distance(GameManager.instancia.Bludger[j].transform.position, GameManager.instancia.team1Players[i].transform.position) <= 2f)
                     {
 
-                        Debug.Log("Entro aqui!!!" + GameManager.instancia.Bludger[j].transform.position);
+                        //("Entro aqui!!!" + GameManager.instancia.Bludger[j].transform.position);
                         player.steering.Target = GameManager.instancia.Bludger[j].transform;
                         player.steering.arrive = true;
                     }
@@ -85,7 +85,7 @@ namespace BeaterSangreLimpiaStates
         {
             if (Vector3.Distance(player.steering.Target.position, player.transform.position) <= 1f)
             {
-                Debug.Log("Va a pegar!!");
+                //("Va a pegar!!");
                 ChangeState(BeaterStateID.Hit);
             }
         }

@@ -21,7 +21,7 @@ public class EventManagerElfo : MonoBehaviour
                 //Si no se encuentra quiere decir que no está en el gameManager
                 if (!eventManager)
                 {
-                    Debug.Log("No hay en la escena un objeto con el EventManager");
+                    //("No hay en la escena un objeto con el EventManager");
                 }
                 else
                 {

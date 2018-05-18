@@ -261,7 +261,7 @@ namespace ChaserElfoStates
 
             player.steering.pursuit = true;
             player.steering.pursuitWeight = 10f;
-            Debug.Log("Flee");
+            //("Flee");
         }
 
         Vector3 tempV;
@@ -336,7 +336,7 @@ namespace ChaserElfoStates
             switch (player.transform.parent.GetComponent<TeamLosChidos>().getTeamNumber())
             {
                 case 1:
-                    Debug.Log(aro);
+                    //(aro);
                     meta = GameManager.instancia.team1Goals[aro];
                     break;
 
@@ -351,7 +351,7 @@ namespace ChaserElfoStates
 
             player.steering.arrive = true;
 
-            Debug.Log("DEfense");
+            //("DEfense");
         }
 
 

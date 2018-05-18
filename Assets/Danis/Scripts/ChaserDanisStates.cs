@@ -30,7 +30,7 @@ namespace ChaserDanisStates
         }
         public override void OnEnter(GameObject objeto)
         {
-            Debug.Log("hola");
+            //("hola");
         }
         public override void Act(GameObject objeto)
         {
@@ -154,7 +154,7 @@ namespace ChaserDanisStates
         {
          
 
-            Debug.Log("porteria");
+            //("porteria");
             int aro = Random.Range(0, 2);
             player.steering.Target = (player.myTeam as TeamDanis).rivalGoals[aro];
 
@@ -170,14 +170,14 @@ namespace ChaserDanisStates
             //si me diero un pase escucho el evento pase
             if (player.myTeam.GetComponent<TeamDanis>().ClosestChaserToGoal == this.player.transform)
             {
-                Debug.Log("voy por ella" + player.myTeam.GetComponent<TeamDanis>().ClosestChaserToGoal);
+                //("voy por ella" + player.myTeam.GetComponent<TeamDanis>().ClosestChaserToGoal);
                 ChangeState(ChaserStateID.ChaseBall);
             }
 
             //si la pelota la tiene el otro equipo voy por ella
             if (!(player.myTeam as TeamDanis).isTeammate(GameManager.instancia.Quaffle.GetComponent<Quaffle>().CurrentBallOwner()))
             {
-                Debug.Log("latienen los otros");
+                //("latienen los otros");
                 ChangeState(ChaserStateID.ChaseRival);
 
             }
@@ -256,7 +256,7 @@ namespace ChaserDanisStates
             if(GameManager.instancia.IsRecovering() == (player.myTeam as TeamDanis).getTeamNumber())
             {
                 ChangeState(ChaserStateID.PrepareToPlay);
-                Debug.Log("goooooooooooooooooooool");
+                //("goooooooooooooooooooool");
             }
             }
         public override void OnExit(GameObject objeto)
@@ -270,7 +270,7 @@ namespace ChaserDanisStates
         IEnumerator PaseFunction()
         {
             yield return new WaitForSeconds(3f);
-            Debug.Log("pase bola"+this.player.transform);
+            //("pase bola"+this.player.transform);
             ((ChaserDanis)player).ThrowStrength =30;
             // el nuevo target es el jugador   si soy yo  sigue siendo la porteria
             if (player.myTeam.GetComponent<TeamDanis>().FindClosestChaserToGoal() != this.player.transform)
@@ -306,7 +306,7 @@ namespace ChaserDanisStates
         }
         public override void OnEnter(GameObject objeto)
         {
-            Debug.Log("nadaaaaaaaaaaaaaa00");
+            //("nadaaaaaaaaaaaaaa00");
             //cuando tira entra en wander
             player.steering.wander = true;
 

@@ -139,7 +139,7 @@ public class TeamDanis : Team
 			{
 				less = dist;
 				ClosestTeammateToQuaffle = Danis;
-                Debug.Log(Danis);
+                //(Danis);
 			}
 		}
 	}
@@ -161,12 +161,12 @@ public class TeamDanis : Team
             }
           
         }
-       // Debug.Log(ClosestChaserToQuaffle);
+       // //(ClosestChaserToQuaffle);
     }
 
     public Transform FindClosestChaserToGoal()
     {
-        Debug.Log("buscando cercano");
+        //("buscando cercano");
         float less = float.MaxValue;
         float dist;
         foreach (Transform chaser in DanisChasers)
@@ -180,14 +180,14 @@ public class TeamDanis : Team
             }
 
         }
-        Debug.Log(ClosestChaserToGoal);
+        //(ClosestChaserToGoal);
         return ClosestChaserToGoal;
         
     }
 
     public GameObject FindClosestEnemyToQuaffle()
     {
-        Debug.Log("buscando cercano");
+        //("buscando cercano");
         float less = float.MaxValue;
         float dist;
         foreach (Transform chafas in Chafas)
@@ -201,7 +201,7 @@ public class TeamDanis : Team
             }
 
         }
-        Debug.Log(ClosestChaserToGoal);
+        //(ClosestChaserToGoal);
         return ClosestEnemyToQuaffle;
 
     }

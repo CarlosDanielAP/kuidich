@@ -88,7 +88,7 @@ public class TeamElfosDomesticos : Team
             myStartingPositions = GameManager.instancia.Team2StartPositions;
             mySeekerStartingPosition = GameManager.instancia.Team2SeekerStartPosition;
         }
-		Debug.Log (LosElfos.Count);
+		// (LosElfos.Count);
 
         for (int j = 0; j < 6; j++)
         {

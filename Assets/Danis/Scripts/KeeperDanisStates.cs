@@ -207,6 +207,7 @@ namespace KeeperDanisStates
             {
                 if (!GameManager.instancia.isQuaffleControlled())
                 {
+                    Debug.Log("portero");
                     // Si no esta controlada, yo puedo tomar posesión de ella
                     GameManager.instancia.ControlQuaffle(player.gameObject);
 

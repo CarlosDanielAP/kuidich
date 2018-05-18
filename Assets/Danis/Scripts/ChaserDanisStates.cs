@@ -76,7 +76,8 @@ namespace ChaserDanisStates
             // Tengo que buscar la Quaffle
             player.steering.Target = GameManager.instancia.Quaffle.transform;
 
-            player.steering.seek = true;
+            //player.steering.seek = true;
+            player.steering.pursuit = true;
         }
         public override void Act(GameObject objeto)
         {
@@ -124,6 +125,7 @@ namespace ChaserDanisStates
         public override void OnExit(GameObject objeto)
         {
             player.steering.seek = false;
+            player.steering.pursuit = false;
         }
 
         IEnumerator IdleFunction()
@@ -312,4 +314,45 @@ namespace ChaserDanisStates
 
         }
         }
-}
+
+    //=============================================================
+    //=================================================== ChaseRival
+    public class ChaseRival : State
+    {
+        private Player player;
+
+        // Variables del estado
+
+        public ChaseRival(Player _player)
+        {
+            player = _player;
+        }
+        public override void OnEnter(GameObject objeto)
+        {
+            if (GameManager.instancia.isQuaffleControlled())
+            {
+                player.steering.Target = GameManager.instancia.Quaffle.GetComponent<Quaffle>().CurrentBallOwner().transform;
+
+                player.steering.seek = true;
+            }
+        }
+
+        public override void Act(GameObject objeto)
+        {
+        }
+        public override void Reason(GameObject objeto)
+        {
+
+            // Quizas la quaffle no tenga ya dueño
+            if (!GameManager.instancia.isQuaffleControlled())
+            {
+                ChangeState(GlobalStateID.Distancia);
+            }
+        }
+
+        public override void OnExit(GameObject objeto)
+        {
+            player.steering.seek = false;
+        }
+        }
+        }

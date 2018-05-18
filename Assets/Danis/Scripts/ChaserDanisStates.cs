@@ -251,6 +251,13 @@ namespace ChaserDanisStates
                 ChangeState(ChaserStateID.nada);
 
             }
+
+            //si anote danisgamenumer
+            if(GameManager.instancia.IsRecovering() == (player.myTeam as TeamDanis).getTeamNumber())
+            {
+                ChangeState(ChaserStateID.PrepareToPlay);
+                Debug.Log("goooooooooooooooooooool");
+            }
             }
         public override void OnExit(GameObject objeto)
         {

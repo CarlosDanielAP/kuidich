@@ -271,6 +271,8 @@ namespace ChaserDanisStates
         public override void OnEnter(GameObject objeto)
         {
             Debug.Log("nadaaaaaaaaaaaaaa00");
+            //cuando tira entra en wander
+            player.steering.wander = true;
 
         }
         public override void Act(GameObject objeto)
@@ -280,11 +282,34 @@ namespace ChaserDanisStates
         }
         public override void Reason(GameObject objeto)
         {
+           
+            // si la pelota esta libre mas de sierto tiempo voy a buscarla y si  soy el mas cercano
+            if (GameManager.instancia.ControlQuaffle(player.gameObject))
+            {
+                fsm.myMono.StartCoroutine(waitFunction());
+            }
 
-        }
+            }
         public override void OnExit(GameObject objeto)
         {
+            fsm.myMono.StopAllCoroutines();
+            player.steering.wander = false;
+        }
+        IEnumerator waitFunction()
+        {
+            yield return new WaitForSeconds(2f);
+            //si la pelota la tiene uno de mi equipo tomo mi posicion
+            if ((player.myTeam as TeamDanis).isTeammate(GameManager.instancia.Quaffle.GetComponent<Quaffle>().CurrentBallOwner()))
+            {
+                ChangeState(ChaserStateID.TakePosition);
+            }
+
+            // si la pelota la tiene un rival voy a atacar
+            else
+            {
+                ChangeState(ChaserStateID.ChaseBall);
+            }
 
         }
-    }
+        }
 }

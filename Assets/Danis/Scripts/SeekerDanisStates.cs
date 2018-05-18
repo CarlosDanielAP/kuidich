@@ -67,7 +67,7 @@ namespace SeekerDanisStates
             // Tengo que buscar la Snitch
             player.steering.Target = GameManager.instancia.Snitch.transform;
 
-            player.steering.seek = true;
+            player.steering.pursuit = true;
         }
         public override void Act(GameObject objeto)
         {
@@ -83,17 +83,19 @@ namespace SeekerDanisStates
                 // Probar agarrarla
                 if (GameManager.instancia.GrabSnitch(objeto))
                 {
-                    // la atrapé
+                    Debug.Log("gane");
                 }
                 else
                 {
-                    // no la atrapé
+                    player.steering.maxSpeed += 1f;
                 }
             }
+
+
         }
         public override void OnExit(GameObject objeto)
         {
-            player.steering.seek = false;
+            player.steering.pursuit = false;
         }
 
         IEnumerator IdleFunction()
